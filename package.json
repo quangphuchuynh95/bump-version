@@ -1,6 +1,6 @@
 {
-  "name": "bump-version",
-  "version": "1.0.0",
+  "name": "phuc-bump-version",
+  "version": "1.0.2",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -13,6 +13,9 @@
     "build": "esbuild src/bin.ts --bundle --platform=node --target=node18 --outfile=bin.js --minify",
     "dev": "yarn build --watch"
   },
+  "files": [
+    "bin.js"
+  ],
   "devDependencies": {
     "commander": "^11.1.0",
     "esbuild": "^0.19.5",

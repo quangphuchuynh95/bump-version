@@ -22,10 +22,10 @@ program
 
     if (rootPackage.workspaces) {
       for (const workspace of rootPackage.workspaces as string[]) {
-        const packageJsonFiles = sync(workspace, {
+        const packageJsonFiles = sync(`${workspace}/package.json`, {
           cwd: process.cwd(),
-        }).map((folder) => {
-          const file = path.join(process.cwd(), folder, "package.json");
+          nodir: true,
+        }).map((file) => {
           const packageJson = readJsonFile(file);
           childPackageJsonFiles.set(packageJson.name, file);
           return packageJson;
@@ -60,6 +60,8 @@ program
         JSON.stringify(packageJson, null, 2),
       );
     }
+
+    fs.writeFileSync(rootPackageJsonFile, JSON.stringify(rootPackage, null, 2));
   });
 
 program.parse();
