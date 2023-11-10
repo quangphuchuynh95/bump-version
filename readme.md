@@ -3,6 +3,13 @@
 ## Usage
 
 ```bash
+yarn add phuc-bump-version -D
+```
+
+
+## Usage
+
+```bash
 # patch version
 bump-version 
 
