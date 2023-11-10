@@ -1,7 +1,11 @@
 {
   "name": "phuc-bump-version",
-  "version": "1.0.2",
-  "main": "index.js",
+  "version": "1.0.3",
+  "author": "Huynh Quang Phuc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quangphuchuynh95/bump-version"
+  },
   "license": "MIT",
   "bin": {
     "bump-version": "bin.js"

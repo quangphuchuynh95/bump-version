@@ -1,6 +1,6 @@
 # Simple script to bump version in monorepo
 
-## Usage
+## Installation
 
 ```bash
 yarn add phuc-bump-version -D
