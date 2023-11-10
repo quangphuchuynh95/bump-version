@@ -1,0 +1,24 @@
+{
+  "name": "bump-version",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "bump-version": "bin.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "build": "esbuild src/bin.ts --bundle --platform=node --target=node18 --outfile=bin.js --minify",
+    "dev": "yarn build --watch"
+  },
+  "devDependencies": {
+    "commander": "^11.1.0",
+    "esbuild": "^0.19.5",
+    "glob": "^10.3.10",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "@types/node": "^18.18.9"
+  }
+}
