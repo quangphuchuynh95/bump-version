@@ -1,6 +1,6 @@
 {
   "name": "phuc-bump-version",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Huynh Quang Phuc",
   "repository": {
     "type": "git",
@@ -14,7 +14,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
-    "build": "esbuild src/bin.ts --bundle --platform=node --target=node18 --outfile=bin.js --minify",
+    "build": "esbuild src/bin.ts --sourcemap=external --bundle --platform=node --target=node18 --outfile=bin.js --minify",
     "dev": "yarn build --watch"
   },
   "files": [

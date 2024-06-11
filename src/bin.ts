@@ -39,10 +39,20 @@ program
       childPackageJson.map((packageJson) => [packageJson.name, packageJson]),
     );
 
-    rootPackage.version = updateVersion(rootPackage.version, bumpType);
+    if (rootPackage.version) {
+      rootPackage.version = updateVersion(rootPackage.version, bumpType);
+    } else {
+      console.warn("Root package.json does not have a version field");
+    }
 
     for (const packageJson of childPackageJsonMap.values()) {
-      packageJson.version = updateVersion(packageJson.version, bumpType);
+      if (packageJson.version) {
+        packageJson.version = updateVersion(packageJson.version, bumpType);
+      } else {
+        console.warn(
+          `Package.json for ${packageJson.name} does not have a version field`,
+        );
+      }
     }
 
     for (const packageJson of childPackageJsonMap.values()) {
